@@ -12,6 +12,8 @@ class Moviedesc(models.Model):
     gender = models.CharField(max_length=100,default="")
     charactername = models.CharField(max_length=100,default="")
     movieid = models.ForeignKey("Movie", on_delete=models.CASCADE,default="")
+    def __str__(self):
+        return str(self.id)
 
 
 class Moviedialogue(models.Model):
@@ -19,5 +21,6 @@ class Moviedialogue(models.Model):
     starttime = models.CharField(max_length=100,default="")
     endtime = models.CharField(max_length=100,default="")
     movieid = models.ForeignKey("Movie", on_delete=models.CASCADE,default="")
+    castid = models.ForeignKey("Moviedesc", on_delete=models.CASCADE,default="")
 
 

@@ -22,17 +22,19 @@
                 var wrapper4= $(".starttime");
                 var wrapper5= $(".endtime");
                 var add_button = $(".add_form_field");
-                var add_button2 = $(".add_form_field2");
 
                 var x = 1;
                 $(add_button).click(function(e) {
                     e.preventDefault();
                     if (x < max_fields) {
                         x++;
-                        $(wrapper).append('<div class=" cast-name"><label for="inputCity">Cast Name</label><input type="text" name="castname[]" class="form-control" id="inputCity"></div><a href="#" class="delete">Delete</a></div>');
-                        $(wrapper2).append('<div class=" gender-name"><label for="inputState">Gender</label><select  id="inputState" name="gender[]"class="form-control"><option selected>Choose...</option><option value="male">Male</option><option value="female">Female</option></select></div><a href="#" class="delete">Delete</a></div>');
-                        $(wrapper1).append('<div class="character-name"><label for="inputZip">Character Name</label><input type="text" style="width:1000" name="charactername[]" class="form-control" id="inputZip"></div><a href="#" class="delete">Delete</a></div>');
-                        //add input box
+                        $(wrapper).append('<div class=" cast-name"><label for="inputCity">Cast Name</label><input type="text" name="castname[]" class="form-control" id="inputCity"></div></div>');
+                        $(wrapper2).append('<div class=" gender-name"><label for="inputState">Gender</label><select  id="inputState" name="gender[]"class="form-control"><option selected>Choose...</option><option value="male">Male</option><option value="female">Female</option></select></div></div>');
+                        $(wrapper1).append('<div class="character-name"><label for="inputZip">Character Name</label><input type="text" style="width:1000" name="charactername[]" class="form-control" id="inputZip"></div></div>');
+                        $(wrapper3).append('<div class="dialogue"><label for="inputCity">Dialogue</label><textarea type="text" name="dialogue[]" class="form-control" id="inputCity"></textarea></div></div>');
+                        $(wrapper4).append('<div class="starttime"><label for="inputZip">Start-Time </label><input type="text" name="start-time[]" class="form-control" id="inputZip3"></div></div>');
+                        $(wrapper5).append('<div class="endtime"><label for="inputZip">End Time</label><input type="text" name="end-time[]" class="form-control" id="inputZip"></div></div>');
+
                     } else {
                         alert('You Reached the limits')
                     }
@@ -42,9 +44,7 @@
                     e.preventDefault();
                     if (x < max_fields) {
                         x++;
-                        $(wrapper3).append('<div class="dialogue"><label for="inputCity">Dialogue</label><textarea type="text" name="dialogue[]" class="form-control" id="inputCity"></textarea></div><a href="#" class="delete">Delete</a></div>');
-                        $(wrapper4).append('<div class="starttime"><label for="inputZip">Start-Time </label><input type="text" name="start-time[]" class="form-control" id="inputZip3"></div><a href="#" class="delete">Delete</a></div>');
-                        $(wrapper5).append('<div class="endtime"><label for="inputZip">End Time</label><input type="text" name="end-time[]" class="form-control" id="inputZip"></div><a href="#" class="delete">Delete</a></div>');
+
                         //add input box
                     } else {
                         alert('You Reached the limits')
@@ -93,30 +93,27 @@
         <label for="inputZip">Character Name</label>
         <input type="text" name="charactername[]" class="form-control" id="inputZip2">
       </div>
-    </div>
-    <button class="add_form_field btn btn-primary">Add New Field &nbsp;
-        <span style="font-size:16px; font-weight:bold;">+ </span>
-    </button>
 
-    <div class="form-row">
         <div class="form-group col-md-6 dialogue">
           <label for="inputCity">Dialogue</label>
           <textarea type="text" name="dialogue[]" class="form-control" id="inputCity"></textarea>
         </div>
         <div class="form-group col-md-2 starttime">
-            <label for="inputZip">Start-Time </label>
+            <label for="inputZip">Start-Time in mins </label>
             <input type="text" name="start-time[]" class="form-control" id="inputZip3">
         </div>
         <div class="form-group col-md-2 endtime">
-            <label for="inputZip">End Time</label>
+            <label for="inputZip">End Time in mins</label>
         <input type="text" name="end-time[]" class="form-control" id="inputZip">
         </div>
     </div>
-     <button class="add_form_field2 btn btn-primary">Add New Field &nbsp;
+      <button class="add_form_field btn btn-primary">Add New Field &nbsp;
         <span style="font-size:16px; font-weight:bold;">+ </span>
     </button>
-
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button class="delete btn btn-primary">Remove Fields &nbsp;
+        <span style="font-size:16px; font-weight:bold;">+ </span>
+    </button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
